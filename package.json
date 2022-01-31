@@ -49,6 +49,7 @@
     "write-file-atomic": "^4.0.0"
   },
   "devDependencies": {
-    "tap": "^15.1.6"
+    "tap": "^15.1.6",
+    "tempy": "^2.0.0"
   }
 }
