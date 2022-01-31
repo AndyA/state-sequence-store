@@ -1,0 +1,54 @@
+{
+  "name": "state-sequence-store",
+  "version": "0.0.1",
+  "description": "A transactional state store to persist the progress of long running operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test",
+    "tdd": "tap -w test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndyA/state-sequence-store.git"
+  },
+  "keywords": [
+    "state store",
+    "state",
+    "transactional",
+    "atomic",
+    "async",
+    "persistence"
+  ],
+  "author": "Andy Armstrong <andy@hexten.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndyA/state-sequence-store/issues"
+  },
+  "homepage": "https://github.com/AndyA/state-sequence-store#readme",
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "consistent",
+    "jsxSingleQuote": false,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "requirePragma": false,
+    "insertPragma": false,
+    "proseWrap": "preserve",
+    "htmlWhitespaceSensitivity": "css",
+    "endOfLine": "lf"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "immer": "^9.0.12",
+    "lodash": "^4.17.21",
+    "proper-lockfile": "^4.1.2",
+    "write-file-atomic": "^4.0.0"
+  },
+  "devDependencies": {
+    "tap": "^15.1.6"
+  }
+}
