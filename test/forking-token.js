@@ -4,15 +4,18 @@ const forkingToken = require("../lib/forking-token");
 tap.test(`forkingToken`, async () => {
   let called = 0;
   let fixed = 0;
-  const tok = forkingToken(() => called++);
+  const tok = forkingToken((muts, fixes) => {
+    called++;
+    fixes.map(f => f());
+  });
   const toks = [tok, tok.fork(), tok.fork()];
   for (const t of toks) {
     tap.same(called, 0);
     tap.same(fixed, 0);
-    await t(() => fixed++);
+    await t(null, () => fixed++);
   }
   tap.same(called, 1);
-  tap.same(fixed, 1);
+  tap.same(fixed, 3);
 });
 
 tap.test(`negative`, async () => {

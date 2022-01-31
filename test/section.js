@@ -1,5 +1,4 @@
 const tap = require("tap");
-const fs = require("fs");
 const { StateFile } = require("..");
 
 const { testWithTemp } = require("../lib/test/util");
@@ -67,12 +66,10 @@ tap.test(`state`, async () => {
 });
 
 tap.test(`negative`, async () => {
-  await testWithTemp(async (file, checkState) => {
+  await testWithTemp(async file => {
     const sf = await StateFile.create(file, {});
     tap.throws(() => {
-      for (let i = 0; i < 100; i++) {
-        const tok = sf.makeToken("toomany", state => {});
-      }
+      for (let i = 0; i < 100; i++) sf.makeToken(state => {});
     });
   });
   tap.test(`too many tokens`, async () => {});
