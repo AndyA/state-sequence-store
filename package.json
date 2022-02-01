@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A transactional state store to persist the progress of long running operations",
   "main": "index.js",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
     "test": "tap test",
     "tdd": "tap -w test"
