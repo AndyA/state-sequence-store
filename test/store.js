@@ -72,7 +72,7 @@ tap.test(`waitForChange`, async () => {
 });
 
 tap.test(`doOnce`, async () => {
-  await testWithTemp(async (file, checkState) => {
+  await testWithTemp(async file => {
     const sf = await StateFile.create(file, { s: { v: 1 } });
     const seen = [];
     const work = await Promise.all(
